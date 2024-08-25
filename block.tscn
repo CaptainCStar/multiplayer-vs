@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2q0c5487gph0"]
+
+[ext_resource type="Texture2D" uid="uid://dhghij5770epv" path="res://alpha-tile-1.png" id="1_s2ekm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7v4d"]
+
+[node name="block" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x7v4d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.788235, 0.788235, 0.788235, 1)
+position = Vector2(4.76837e-07, -4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_s2ekm")

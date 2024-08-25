@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://t6gvjqfy4cob"]
+
+[ext_resource type="PackedScene" uid="uid://c2r5csa8ti30q" path="res://color_rect.tscn" id="1_7ry8d"]
+[ext_resource type="PackedScene" uid="uid://b2q0c5487gph0" path="res://block.tscn" id="2_onx08"]
+[ext_resource type="PackedScene" uid="uid://bn0x8vb3jegyi" path="res://player.tscn" id="3_w6q0m"]
+
+[node name="level-2" type="Node2D"]
+
+[node name="ColorRect" parent="." instance=ExtResource("1_7ry8d")]
+offset_left = -846.0
+offset_top = -515.0
+offset_right = 1975.0
+offset_bottom = 1118.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 377)
+zoom = Vector2(0.5, 0.5)
+
+[node name="block" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(621, 973)
+scale = Vector2(200, 1)
+
+[node name="block2" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(477, -323)
+scale = Vector2(200, 1)
+
+[node name="block3" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(-587, 511)
+rotation = 1.5708
+scale = Vector2(200, 1)
+
+[node name="block4" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(1981, 469)
+rotation = 1.5708
+scale = Vector2(200, 1)
+
+[node name="block7" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(918, 684)
+scale = Vector2(20, 1)
+
+[node name="block16" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(1793, 324)
+scale = Vector2(10, 1)
+
+[node name="block17" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(-475, 300)
+scale = Vector2(10, 1)
+
+[node name="block8" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(268, 678)
+scale = Vector2(20, 1)
+
+[node name="block15" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(559, 148)
+scale = Vector2(40, 1)
+
+[node name="block9" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(-308, 480)
+rotation = 0.392699
+scale = Vector2(20, 1)
+
+[node name="block10" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(1397, 762)
+rotation = 0.392699
+scale = Vector2(20, 1)
+
+[node name="block13" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(1025, 292)
+rotation = 0.392699
+scale = Vector2(20, 1)
+
+[node name="block11" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(-152, 759)
+rotation = -0.392699
+scale = Vector2(20, 1)
+
+[node name="block14" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(109, 304)
+rotation = -0.392699
+scale = Vector2(20, 1)
+
+[node name="block12" parent="." instance=ExtResource("2_onx08")]
+position = Vector2(1502, 489)
+rotation = -0.392699
+scale = Vector2(20, 1)
+
+[node name="player" parent="." instance=ExtResource("3_w6q0m")]
+position = Vector2(156, 845)
+
+[node name="player2" parent="." instance=ExtResource("3_w6q0m")]
+position = Vector2(755, 841)
+player_index = 1

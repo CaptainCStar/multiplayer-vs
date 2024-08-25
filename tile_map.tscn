@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d30olap8qc1rm"]
+
+[ext_resource type="Texture2D" uid="uid://dhghij5770epv" path="res://alpha-tile-1.png" id="1_v7i5f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikfmx"]
+texture = ExtResource("1_v7i5f")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_54tc7"]
+texture = ExtResource("1_v7i5f")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_cwc4r"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ikfmx")
+sources/1 = SubResource("TileSetAtlasSource_54tc7")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_cwc4r")
+format = 2

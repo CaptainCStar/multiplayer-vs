@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp42xjgm48pdx"]
+
+[ext_resource type="PackedScene" uid="uid://fftq2vnsy4ql" path="res://gug.tscn" id="1_pxft5"]
+[ext_resource type="Script" path="res://stress_test.gd" id="1_sdg06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i28vo"]
+size = Vector2(54, 1122)
+
+[node name="stress_test" type="Node2D"]
+script = ExtResource("1_sdg06")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5, 312)
+shape = SubResource("RectangleShape2D_i28vo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1151, 312)
+shape = SubResource("RectangleShape2D_i28vo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, -24)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_i28vo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 662)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_i28vo")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(52, 59)
+
+[node name="CharacterBody2D11" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1081, 48)
+rotation = 3.14159
+
+[node name="CharacterBody2D12" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1081, 101)
+rotation = 3.14159
+
+[node name="CharacterBody2D13" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1082, 170)
+rotation = 3.14159
+
+[node name="CharacterBody2D14" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1079, 244)
+rotation = 3.14159
+
+[node name="CharacterBody2D15" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1080, 320)
+rotation = 3.14159
+
+[node name="CharacterBody2D16" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1083, 378)
+rotation = 3.14159
+
+[node name="CharacterBody2D17" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1079, 455)
+rotation = 3.14159
+
+[node name="CharacterBody2D18" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1083, 528)
+rotation = 3.14159
+
+[node name="CharacterBody2D19" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(1082, 600)
+rotation = 3.14159
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(53, 129)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(59, 187)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(65, 248)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(69, 323)
+
+[node name="CharacterBody2D6" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(74, 391)
+
+[node name="CharacterBody2D7" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(75, 464)
+
+[node name="CharacterBody2D8" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(73, 523)
+
+[node name="CharacterBody2D9" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(72, 569)
+
+[node name="CharacterBody2D10" parent="." instance=ExtResource("1_pxft5")]
+position = Vector2(74, 611)

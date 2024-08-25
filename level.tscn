@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch00hcn5ol0ic"]
+
+[ext_resource type="PackedScene" uid="uid://b2q0c5487gph0" path="res://block.tscn" id="1_rfkcn"]
+[ext_resource type="Script" path="res://level.gd" id="1_y1hev"]
+[ext_resource type="PackedScene" uid="uid://bn0x8vb3jegyi" path="res://player.tscn" id="2_gqr0j"]
+[ext_resource type="Texture2D" uid="uid://klcn2bb6rgqg" path="res://gordon_ramsey.png" id="3_n47ge"]
+[ext_resource type="Texture2D" uid="uid://d1q1f47vfnrxn" path="res://gut_fieri.png" id="4_x4q2u"]
+
+[node name="level" type="Node2D"]
+position = Vector2(595, 627)
+script = ExtResource("1_y1hev")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -862.0
+offset_top = -664.0
+offset_right = 976.0
+offset_bottom = 40.0
+color = Color(0.662745, 0.662745, 0.662745, 1)
+
+[node name="block" parent="." instance=ExtResource("1_rfkcn")]
+scale = Vector2(100, 1)
+
+[node name="block4" parent="." instance=ExtResource("1_rfkcn")]
+position = Vector2(-37, -622)
+scale = Vector2(100, 1)
+
+[node name="block5" parent="." instance=ExtResource("1_rfkcn")]
+position = Vector2(578, -538)
+rotation = 1.5708
+scale = Vector2(100, 1)
+
+[node name="block6" parent="." instance=ExtResource("1_rfkcn")]
+position = Vector2(-628, -554)
+rotation = 1.5708
+scale = Vector2(100, 1)
+
+[node name="block2" parent="." instance=ExtResource("1_rfkcn")]
+position = Vector2(-390, -107)
+scale = Vector2(20, 1)
+
+[node name="block3" parent="." instance=ExtResource("1_rfkcn")]
+position = Vector2(93, -235)
+scale = Vector2(20, 1)
+
+[node name="player" parent="." instance=ExtResource("2_gqr0j")]
+position = Vector2(-96, -422)
+
+[node name="Sprite2D2" type="Sprite2D" parent="player"]
+visible = false
+scale = Vector2(0.11, 0.1)
+texture = ExtResource("3_n47ge")
+
+[node name="player2" parent="." instance=ExtResource("2_gqr0j")]
+position = Vector2(-379, -372)
+player_index = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="player2"]
+visible = false
+position = Vector2(-4.49999, -0.500005)
+scale = Vector2(0.087, 0.0575)
+texture = ExtResource("4_x4q2u")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="dead" from="player" to="." method="_on_player_dead"]
+[connection signal="dead" from="player2" to="." method="_on_player_2_dead"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

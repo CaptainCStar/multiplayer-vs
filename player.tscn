@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://bn0x8vb3jegyi"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_24ets"]
+[ext_resource type="Texture2D" uid="uid://d2f3lm367602g" path="res://icon.svg" id="2_iqui7"]
+[ext_resource type="PackedScene" uid="uid://bhf1gl0j7u7g5" path="res://pshooter.tscn" id="3_7wq5g"]
+[ext_resource type="Texture2D" uid="uid://d1q1f47vfnrxn" path="res://gut_fieri.png" id="4_14aqj"]
+[ext_resource type="Texture2D" uid="uid://klcn2bb6rgqg" path="res://gordon_ramsey.png" id="5_bl07t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxspb"]
+size = Vector2(64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s53a3"]
+bg_color = Color(0.498039, 0, 0.0431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kt0h5"]
+bg_color = Color(0.262745, 0.462745, 0.0588235, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1472"]
+size = Vector2(65, 64)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_24ets")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_iqui7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gxspb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Pshooter" parent="." instance=ExtResource("3_7wq5g")]
+
+[node name="HPbar" type="ProgressBar" parent="."]
+offset_left = -61.0
+offset_top = -63.0
+offset_right = 61.0
+offset_bottom = -36.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s53a3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kt0h5")
+show_percentage = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_r1472")
+
+[node name="GF" type="Sprite2D" parent="."]
+position = Vector2(0.249993, -6.55651e-07)
+scale = Vector2(0.0785, 0.0533333)
+texture = ExtResource("4_14aqj")
+
+[node name="GR" type="Sprite2D" parent="."]
+position = Vector2(-7, -4.05312e-06)
+scale = Vector2(0.148148, 0.105556)
+texture = ExtResource("5_bl07t")
+
+[node name="heal_cooldown" type="Timer" parent="."]
+wait_time = 200.0
+
+[connection signal="shoot" from="." to="Pshooter" method="_on_player_shoot"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="heal_cooldown" to="." method="_on_heal_cooldown_timeout"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhf1gl0j7u7g5"]
+
+[ext_resource type="Texture2D" uid="uid://dhghij5770epv" path="res://alpha-tile-1.png" id="1_0cvan"]
+[ext_resource type="Script" path="res://pshooter.gd" id="1_llahy"]
+
+[node name="Pshooter" type="CharacterBody2D"]
+script = ExtResource("1_llahy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.678431, 0.52549, 0.262745, 1)
+position = Vector2(64, 0)
+texture = ExtResource("1_0cvan")
+
+[node name="Spoint" type="Area2D" parent="."]
+position = Vector2(83, -2)
