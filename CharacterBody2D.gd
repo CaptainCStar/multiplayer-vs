@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#test comment
 
 var shoot = preload("res://pew.tscn")
 var can_shoot = true
